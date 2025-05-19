@@ -19,6 +19,6 @@ def generate_with_ollama(prompt, model="llama3.2:latest"):
 
 # Exemple d'utilisation
 if __name__ == "__main__":
-    question = "Explique la gravité en termes simples."
+    question = "Quels sont les éléments caractérisant une noyade?"
     réponse = generate_with_ollama(question)
     print("Réponse de LLaMA 3 :", réponse)
