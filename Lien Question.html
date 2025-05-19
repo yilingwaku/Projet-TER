@@ -134,25 +134,159 @@ Quels sont les outils alors les outils que vous utilisé ?
 (click:?bt)[
 (go-to:&quot;Avez-vous des placards placé en hauteur ?&quot;)
 ]
-</tw-passagedata><tw-passagedata pid="4" name="Avez-vous des placards placé en hauteur ?" tags="Chute" position="525,425" size="100,100">Avez-vous des placards placé en hauteur ?
-Oui				Non
+</tw-passagedata><tw-passagedata pid="4" name="Avez-vous des placards placé en hauteur ?" tags="Chute" position="525,425" size="100,100">&lt;script&gt;
+var checkbox1 = document.getElementById(&quot;oui&quot;);
+var checkbox2 = document.getElementById(&quot;non&quot;);
+var Encombrant = false;
+checkbox1.onchange = function() {
+  if (this.checked) {
+    checkbox2.checked = false;
+  }
+};
 
-&lt;button&gt;[[Question suivante|Faites-vous des activités physiques fréquemment ?]]&lt;/button&gt;</tw-passagedata><tw-passagedata pid="5" name="Faites-vous des activités physiques fréquemment ?" tags="Chute" position="675,475" size="100,100">Faites-vous des activités physiques fréquemment ?
-Oui				Non			Rarement
+checkbox2.onchange = function() {
+  if (this.checked) {
+    checkbox1.checked = false;
+    Encombrant=false;
+    console.log(Encombrant)
+  }
+};
+&lt;/script&gt;
+Avez-vous des placards placé en hauteur ?
+{
+&lt;input type=&quot;checkbox&quot; id=&quot;oui&quot; name=&quot;choix&quot;&gt; Oui
+&lt;input type=&quot;checkbox&quot; id=&quot;non&quot; name=&quot;choix&quot;&gt;Non
+}
 
-&lt;button&gt;[[Question suivante|Avez-vous des animaux ?]]&lt;/button&gt;</tw-passagedata><tw-passagedata pid="6" name="Avez-vous des animaux ?" tags="Chute" position="525,525" size="100,100">Avez-vous des animaux ?
-Oui				Non
+|bt&gt;[&lt;button&gt;Question suivante&lt;/button&gt;]
 
-Si oui :Est-ce un animal de grande taille  ou est-il très affectif?
-Oui				Non
-&lt;button&gt;[[Question suivante|Avez-vous chuté au cours des 12 derniers mois ?]]&lt;/button&gt;</tw-passagedata><tw-passagedata pid="7" name="Avez-vous chuté au cours des 12 derniers mois ?" tags="Chute" position="675,575" size="100,100">Avez-vous chuté au cours des 12 derniers mois ?
-Oui					Non
-*Si oui: Combien de fois êtes-vous tombé ?
-1			2		3+
-&lt;button&gt;[[Question suivante|Mangez-vous à votre faim?]]&lt;/button&gt;</tw-passagedata><tw-passagedata pid="8" name="Mangez-vous à votre faim?" tags="Chute Nutrition" position="525,625" size="100,100">Mangez-vous à votre faim ?
-Oui					Non
-&lt;button&gt;[[Question suivante|Quels sont les moyens de transports que vous utilisez ?]]&lt;/button&gt;</tw-passagedata><tw-passagedata pid="9" name="Quels sont les moyens de transports que vous utilisez ?" tags="" position="675,675" size="100,100">Quels sont les moyens de transports que vous utilisez ?
-&lt;input type=&quot;text&quot;&gt;</tw-passagedata><tw-passagedata pid="10" name="Dans votre cuisine, quels sont les appareils que vous possédez ?" tags="Cuisine" position="350,150" size="100,100">Dans votre cuisine, quels sont les appareils que vous possédez ?
+(click:?bt)[
+(go-to:&quot;Faites-vous des activités physiques fréquemment ?&quot;)
+]</tw-passagedata><tw-passagedata pid="5" name="Faites-vous des activités physiques fréquemment ?" tags="Chute" position="675,475" size="100,100">&lt;script&gt;
+var checkbox1 = document.getElementById(&quot;oui&quot;);
+var checkbox2 = document.getElementById(&quot;non&quot;);
+var checkbox3 = document.getElementById(&quot;rarement&quot;);
+var Encombrant = false;
+checkbox1.onchange = function() {
+  if (this.checked) {
+    checkbox2.checked = false;
+    checkbox3.checked = false;
+  }
+};
+
+checkbox2.onchange = function() {
+  if (this.checked) {
+    checkbox1.checked = false;
+    checkbox3.checked = false;
+  }
+};
+checkbox3.onchange = function() {
+  if (this.checked) {
+    checkbox1.checked = false;
+    checkbox2.checked = false;
+  }
+};
+&lt;/script&gt;
+Faites-vous des activités physiques fréquemment ?
+{
+&lt;input type=&quot;checkbox&quot; id=&quot;oui&quot; name=&quot;choix&quot;&gt; Oui
+&lt;input type=&quot;checkbox&quot; id=&quot;rarement&quot; name=&quot;choix&quot;&gt; Rarement
+&lt;input type=&quot;checkbox&quot; id=&quot;non&quot; name=&quot;choix&quot;&gt;Non
+}
+
+|bt&gt;[&lt;button&gt;Question suivante&lt;/button&gt;]
+
+(click:?bt)[
+(go-to:&quot;Avez-vous des animaux ?&quot;)
+]
+
+
+</tw-passagedata><tw-passagedata pid="6" name="Avez-vous des animaux ?" tags="Chute" position="525,525" size="100,100">Avez-vous des animaux ?
+ |btTest&gt;[(checkbox:bind _Oui,&quot;Oui&quot;)]
+(checkbox:bind _Non,&quot;Non&quot;)
+
+(click:?btTest)[
+Est-ce un animal de grande taille ou est-il très affectif?
+(checkbox: bind _oui,&quot;Oui&quot;)
+]
+
+|bt&gt;[&lt;button&gt;Question suivante&lt;/button&gt;]
+
+(click:?bt)[
+(go-to:&quot;Avez-vous chuté au cours des 12 derniers mois ?&quot;)
+]</tw-passagedata><tw-passagedata pid="7" name="Avez-vous chuté au cours des 12 derniers mois ?" tags="Chute" position="675,575" size="100,100">
+
+Avez-vous chuté au cours des 12 derniers mois ?
+ |btTest&gt;[(checkbox:bind _Oui,&quot;Oui&quot;)]
+(checkbox:bind _Non,&quot;Non&quot;)
+
+(click:?btTest)[
+&lt;script&gt;
+var checkbox1 = document.getElementById(&quot;oui&quot;);
+var checkbox2 = document.getElementById(&quot;non&quot;);
+var checkbox3 = document.getElementById(&quot;rarement&quot;);
+var Encombrant = false;
+checkbox1.onchange = function() {
+  if (this.checked) {
+    checkbox2.checked = false;
+    checkbox3.checked = false;
+  }
+};
+
+checkbox2.onchange = function() {
+  if (this.checked) {
+    checkbox1.checked = false;
+    checkbox3.checked = false;
+  }
+};
+checkbox3.onchange = function() {
+  if (this.checked) {
+    checkbox1.checked = false;
+    checkbox2.checked = false;
+  }
+};
+&lt;/script&gt;
+Combien de fois êtes-vous tombé ?
+{
+&lt;input type=&quot;checkbox&quot; id=&quot;oui&quot; name=&quot;choix&quot;&gt; 1
+&lt;input type=&quot;checkbox&quot; id=&quot;rarement&quot; name=&quot;choix&quot;&gt;2
+&lt;input type=&quot;checkbox&quot; id=&quot;non&quot; name=&quot;choix&quot;&gt;3+
+}
+]
+
+|bt&gt;[&lt;button&gt;Question suivante&lt;/button&gt;]
+
+(click:?bt)[(go-to:&quot;Mangez-vous à votre faim?&quot;)]</tw-passagedata><tw-passagedata pid="8" name="Mangez-vous à votre faim?" tags="Chute Nutrition" position="525,625" size="100,100">&lt;script&gt;
+var checkbox1 = document.getElementById(&quot;oui&quot;);
+var checkbox2 = document.getElementById(&quot;non&quot;);
+var Encombrant = false;
+checkbox1.onchange = function() {
+  if (this.checked) {
+    checkbox2.checked = false;
+  }
+};
+
+checkbox2.onchange = function() {
+  if (this.checked) {
+    checkbox1.checked = false;
+    Encombrant=false;
+    console.log(Encombrant)
+  }
+};
+&lt;/script&gt;
+Mangez-vous à votre faim ?
+{
+&lt;input type=&quot;checkbox&quot; id=&quot;oui&quot; name=&quot;choix&quot;&gt; Oui
+&lt;input type=&quot;checkbox&quot; id=&quot;non&quot; name=&quot;choix&quot;&gt;Non
+}
+|bt&gt;[&lt;button&gt;Question suivante&lt;/button&gt;]
+
+(click-goto:?bt,&quot;Quels sont les moyens de transports que vous utilisez ?&quot;)</tw-passagedata><tw-passagedata pid="9" name="Quels sont les moyens de transports que vous utilisez ?" tags="" position="675,675" size="100,100">Quels sont les moyens de transports que vous utilisez ?
+(input:)
+
+|bt&gt;[&lt;button&gt;Question suivante&lt;/button&gt;]
+
+(click:?bt)[(go-to:&quot;AutoEval&quot;)]</tw-passagedata><tw-passagedata pid="10" name="Dans votre cuisine, quels sont les appareils que vous possédez ?" tags="Cuisine" position="350,150" size="100,100">Dans votre cuisine, quels sont les appareils que vous possédez ?
 {
 (checkbox: bind $Refregirateur,&quot;Réfrigérateur&quot;)
 (checkbox: bind $GrillePain,&quot;Grille-Pain&quot;)
@@ -207,7 +341,249 @@ Oui					Non
 
 (click:?bt)[
 (go-to:&quot;Avez-vous des meubles encombrant ?&quot;) 
-]</tw-passagedata></tw-storydata>
+]</tw-passagedata><tw-passagedata pid="12" name="AutoEval" tags="" position="450,825" size="100,100">
+Vous sentez-vous toujours capable de faire les courses, de faire la cuisine,
+de mettre la table ?
+{
+&lt;script&gt;
+var checkbox1 = document.getElementById(&quot;oui&quot;);
+var checkbox2 = document.getElementById(&quot;non&quot;);
+var Encombrant = false;
+checkbox1.onchange = function() {
+  if (this.checked) {
+    checkbox2.checked = false;
+  }
+};
+
+checkbox2.onchange = function() {
+  if (this.checked) {
+    checkbox1.checked = false;
+    Encombrant=false;
+    console.log(Encombrant)
+  }
+};
+&lt;/script&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;oui&quot; name=&quot;choix&quot;&gt; Oui
+&lt;input type=&quot;checkbox&quot; id=&quot;non&quot; name=&quot;choix&quot;&gt;Non
+}
+
+Mangez-vous tous les jours des fruits, des légumes verts et des laitages ?
+{
+&lt;script&gt;
+var checkbox1 = document.getElementById(&quot;oui2&quot;);
+var checkbox2 = document.getElementById(&quot;non2&quot;);
+var Encombrant = false;
+checkbox1.onchange = function() {
+  if (this.checked) {
+    checkbox2.checked = false;
+  }
+};
+
+checkbox2.onchange = function() {
+  if (this.checked) {
+    checkbox1.checked = false;
+    Encombrant=false;
+    console.log(Encombrant)
+  }
+};
+&lt;/script&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;oui2&quot; name=&quot;choix&quot;&gt; Oui
+&lt;input type=&quot;checkbox&quot; id=&quot;non2&quot; name=&quot;choix&quot;&gt;Non
+}
+
+Avez-vous maigri de 2 kilos et plus dans le dernier mois ou de 4 kilos et plus
+dans les 6 derniers mois ?
+{
+&lt;script&gt;
+var checkbox1 = document.getElementById(&quot;oui3&quot;);
+var checkbox2 = document.getElementById(&quot;non3&quot;);
+var Encombrant = false;
+checkbox1.onchange = function() {
+  if (this.checked) {
+    checkbox2.checked = false;
+  }
+};
+
+checkbox2.onchange = function() {
+  if (this.checked) {
+    checkbox1.checked = false;
+    Encombrant=false;
+    console.log(Encombrant)
+  }
+};
+&lt;/script&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;oui3&quot; name=&quot;choix&quot;&gt; Oui
+&lt;input type=&quot;checkbox&quot; id=&quot;non3&quot; name=&quot;choix&quot;&gt;Non
+}
+
+Avez-vous une maladie ou un handicap qui vous gène pour vous alimenter ?
+{
+&lt;script&gt;
+var checkbox1 = document.getElementById(&quot;oui4&quot;);
+var checkbox2 = document.getElementById(&quot;non4&quot;);
+var Encombrant = false;
+checkbox1.onchange = function() {
+  if (this.checked) {
+    checkbox2.checked = false;
+  }
+};
+
+checkbox2.onchange = function() {
+  if (this.checked) {
+    checkbox1.checked = false;
+    Encombrant=false;
+    console.log(Encombrant)
+  }
+};
+&lt;/script&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;oui4&quot; name=&quot;choix&quot;&gt; Oui
+&lt;input type=&quot;checkbox&quot; id=&quot;non4&quot; name=&quot;choix&quot;&gt;Non
+}
+
+Avez-vous subi une intervention chirurgicale ou avez-vous une affection
+médicale aiguë durant les derniers mois ?
+{
+&lt;script&gt;
+var checkbox1 = document.getElementById(&quot;oui5&quot;);
+var checkbox2 = document.getElementById(&quot;non5&quot;);
+var Encombrant = false;
+checkbox1.onchange = function() {
+  if (this.checked) {
+    checkbox2.checked = false;
+  }
+};
+
+checkbox2.onchange = function() {
+  if (this.checked) {
+    checkbox1.checked = false;
+    Encombrant=false;
+    console.log(Encombrant)
+  }
+};
+&lt;/script&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;oui5&quot; name=&quot;choix&quot;&gt; Oui
+&lt;input type=&quot;checkbox&quot; id=&quot;non5&quot; name=&quot;choix&quot;&gt;Non
+}
+
+Avez-vous l’impression de dégoût, de manque d’appétit ou l‘impression
+de n’avoir jamais faim au moment des repas ?
+{&lt;script&gt;
+var checkbox1 = document.getElementById(&quot;oui6&quot;);
+var checkbox2 = document.getElementById(&quot;non6&quot;);
+var Encombrant = false;
+checkbox1.onchange = function() {
+  if (this.checked) {
+    checkbox2.checked = false;
+  }
+};
+
+checkbox2.onchange = function() {
+  if (this.checked) {
+    checkbox1.checked = false;
+    Encombrant=false;
+    console.log(Encombrant)
+  }
+};
+&lt;/script&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;oui6&quot; name=&quot;choix&quot;&gt; Oui
+&lt;input type=&quot;checkbox&quot; id=&quot;non6&quot; name=&quot;choix&quot;&gt;Non
+}
+
+Mangez-vous souvent seul ?
+{
+&lt;script&gt;
+var checkbox1 = document.getElementById(&quot;oui7&quot;);
+var checkbox2 = document.getElementById(&quot;non7&quot;);
+var Encombrant = false;
+checkbox1.onchange = function() {
+  if (this.checked) {
+    checkbox2.checked = false;
+  }
+};
+
+checkbox2.onchange = function() {
+  if (this.checked) {
+    checkbox1.checked = false;
+    Encombrant=false;
+    console.log(Encombrant)
+  }
+};
+&lt;/script&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;oui7&quot; name=&quot;choix&quot;&gt; Oui
+&lt;input type=&quot;checkbox&quot; id=&quot;non7&quot; name=&quot;choix&quot;&gt;Non
+}
+
+Buvez-vous plus de 3 verres par vin, de bière ou d’alcool par jour ?
+{
+&lt;script&gt;
+var checkbox1 = document.getElementById(&quot;oui8&quot;);
+var checkbox2 = document.getElementById(&quot;non8&quot;);
+var Encombrant = false;
+checkbox1.onchange = function() {
+  if (this.checked) {
+    checkbox2.checked = false;
+  }
+};
+
+checkbox2.onchange = function() {
+  if (this.checked) {
+    checkbox1.checked = false;
+    Encombrant=false;
+    console.log(Encombrant)
+  }
+};
+&lt;/script&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;oui8&quot; name=&quot;choix&quot;&gt; Oui
+&lt;input type=&quot;checkbox&quot; id=&quot;non8&quot; name=&quot;choix&quot;&gt;Non
+}
+
+Faites-vous 3 repas par jour ? Un goûter ne compte pas 
+{
+&lt;script&gt;
+var checkbox1 = document.getElementById(&quot;oui9&quot;);
+var checkbox2 = document.getElementById(&quot;non9&quot;);
+var Encombrant = false;
+checkbox1.onchange = function() {
+  if (this.checked) {
+    checkbox2.checked = false;
+  }
+};
+
+checkbox2.onchange = function() {
+  if (this.checked) {
+    checkbox1.checked = false;
+    Encombrant=false;
+    console.log(Encombrant)
+  }
+};
+&lt;/script&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;oui9&quot; name=&quot;choix&quot;&gt; Oui
+&lt;input type=&quot;checkbox&quot; id=&quot;non9&quot; name=&quot;choix&quot;&gt;Non
+}
+
+Prenez-vous 3 médicaments ou plus par jour ?
+{
+&lt;script&gt;
+var checkbox1 = document.getElementById(&quot;oui10&quot;);
+var checkbox2 = document.getElementById(&quot;non10&quot;);
+var Encombrant = false;
+checkbox1.onchange = function() {
+  if (this.checked) {
+    checkbox2.checked = false;
+  }
+};
+
+checkbox2.onchange = function() {
+  if (this.checked) {
+    checkbox1.checked = false;
+    Encombrant=false;
+    console.log(Encombrant)
+  }
+};
+&lt;/script&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;oui10&quot; name=&quot;choix&quot;&gt; Oui
+&lt;input type=&quot;checkbox&quot; id=&quot;non10&quot; name=&quot;choix&quot;&gt;Non
+}</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
