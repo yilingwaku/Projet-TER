@@ -91,15 +91,50 @@ tw-story {
 (if:$Cuisine)[(go-to:&quot;Dans votre cuisine, quels sont les appareils que vous possédez ?&quot;)]
 (else-if:$SalleBain)[(go-to:&quot;Dans votre salle de bain, quels sont les équipements que vous possédez ?&quot;)]
 (else:)[(go-to:&quot;Avez-vous des meubles encombrant ?&quot;)]
-]</tw-passagedata><tw-passagedata pid="2" name="Avez-vous des meubles encombrant ?" tags="Chute" position="525,325" size="100,100">Avez-vous des meubles encombrant ?
-Oui&lt;input type=&quot;checkbox&quot;&gt;				Non &lt;input type=&quot;checkbox&quot;&gt;
+]</tw-passagedata><tw-passagedata pid="2" name="Avez-vous des meubles encombrant ?" tags="Chute" position="525,325" size="100,100">&lt;script&gt;
+var checkbox1 = document.getElementById(&quot;oui&quot;);
+var checkbox2 = document.getElementById(&quot;non&quot;);
+var Encombrant = false;
+checkbox1.onchange = function() {
+  if (this.checked) {
+    checkbox2.checked = false;
+  }
+};
 
-&lt;button&gt;[[Question suivante|Utilisez-vous un équipement d’aide (canne, déambulateur, escalator …)]]&lt;/button&gt;</tw-passagedata><tw-passagedata pid="3" name="Utilisez-vous un équipement d’aide (canne, déambulateur, escalator …)" tags="Chute" position="675,375" size="100,100">Utilisez-vous un équipement d’aide (canne, déambulateur, escalator …)
-Oui&lt;input type=&quot;checkbox&quot;&gt;				Non&lt;input type=&quot;checkbox&quot;&gt;
+checkbox2.onchange = function() {
+  if (this.checked) {
+    checkbox1.checked = false;
+    Encombrant=false;
+    console.log(Encombrant)
+  }
+};
+&lt;/script&gt;
+Avez-vous des meubles encombrant ?
+{
+&lt;input type=&quot;checkbox&quot; id=&quot;oui&quot; name=&quot;choix&quot;&gt; Oui
+&lt;input type=&quot;checkbox&quot; id=&quot;non&quot; name=&quot;choix&quot;&gt;Non
+}
+|bt&gt;[&lt;button&gt;Question suivante&lt;/button&gt;]
+
+(click-goto:?bt,&quot;Utilisez-vous un équipement d’aide (canne, déambulateur, escalator …)&quot;)
+
+
+
+</tw-passagedata><tw-passagedata pid="3" name="Utilisez-vous un équipement d’aide (canne, déambulateur, escalator …)" tags="Chute" position="675,375" size="100,100">Utilisez-vous un équipement d’aide (canne, déambulateur, escalator …)
+ |btTest&gt;[(checkbox:bind _Oui,&quot;Oui&quot;)]
+(checkbox:bind _Non,&quot;Non&quot;)
+
+(click:?btTest)[
 Quels sont les outils alors les outils que vous utilisé ?
-&lt;input type=&quot;text&quot;&gt;
+(input: bind $Outil,&quot;Les outils utilisés&quot;)
+]
 
-&lt;button&gt;[[Question suivante|Avez-vous des placards placé en hauteur ?]]&lt;/button&gt;</tw-passagedata><tw-passagedata pid="4" name="Avez-vous des placards placé en hauteur ?" tags="Chute" position="525,425" size="100,100">Avez-vous des placards placé en hauteur ?
+|bt&gt;[&lt;button&gt;Question suivante&lt;/button&gt;]
+
+(click:?bt)[
+(go-to:&quot;Avez-vous des placards placé en hauteur ?&quot;)
+]
+</tw-passagedata><tw-passagedata pid="4" name="Avez-vous des placards placé en hauteur ?" tags="Chute" position="525,425" size="100,100">Avez-vous des placards placé en hauteur ?
 Oui				Non
 
 &lt;button&gt;[[Question suivante|Faites-vous des activités physiques fréquemment ?]]&lt;/button&gt;</tw-passagedata><tw-passagedata pid="5" name="Faites-vous des activités physiques fréquemment ?" tags="Chute" position="675,475" size="100,100">Faites-vous des activités physiques fréquemment ?
@@ -118,25 +153,61 @@ Oui					Non
 Oui					Non
 &lt;button&gt;[[Question suivante|Quels sont les moyens de transports que vous utilisez ?]]&lt;/button&gt;</tw-passagedata><tw-passagedata pid="9" name="Quels sont les moyens de transports que vous utilisez ?" tags="" position="675,675" size="100,100">Quels sont les moyens de transports que vous utilisez ?
 &lt;input type=&quot;text&quot;&gt;</tw-passagedata><tw-passagedata pid="10" name="Dans votre cuisine, quels sont les appareils que vous possédez ?" tags="Cuisine" position="350,150" size="100,100">Dans votre cuisine, quels sont les appareils que vous possédez ?
+{
+(checkbox: bind $Refregirateur,&quot;Réfrigérateur&quot;)
+(checkbox: bind $GrillePain,&quot;Grille-Pain&quot;)
+(checkbox: bind $Congélateur,&quot;Congélateur&quot;)
+}
+&lt;br&gt;
+{
+(checkbox: bind $Gazinière,&quot;Gazinère&quot;)
+(checkbox: bind $PlaqueInduction,&quot;Plaque à Induction&quot;)
+(checkbox: bind $Four,&quot;Four&quot;)
+}
+&lt;br&gt;
+{
+(checkbox: bind $FriteuseElectrique,&quot;Friteuse électrique&quot;)
+(checkbox: bind $MachineCafe,&quot;Machine à café&quot;)
+(checkbox: bind $Barbecue,&quot;Barbecue électrique&quot;)
+}
+&lt;br&gt;
+{
+(checkbox: bind $Placha,&quot;Plancha&quot;)
+(checkbox: bind $RobotCuiseur,&quot;Robot Cuiseur&quot;)
+(input-box:bind $Autre,&quot;Autre&quot;)
+}
+&lt;br&gt;
+|bt&gt;[&lt;button&gt;Question Suivante&lt;/button&gt;]
 
-Réfrigérateur			Grille-pain		Congélateur
-
-Gazinière			Plaque à induction	Four
-
-Friteuse électrique		Machine à café	Barbecue électrique
-
-Plancha			Robot cuiseur		Autre (open)
-&lt;button&gt;
-(link:&quot;Question suivante&quot;)[
+(click:?bt)[
 (if:$SalleBain)[(go-to:&quot;Dans votre salle de bain, quels sont les équipements que vous possédez ?&quot;)]
 (else:)[(go-to:&quot;Avez-vous des meubles encombrant ?&quot;)]
-]
-&lt;/button&gt;</tw-passagedata><tw-passagedata pid="11" name="Dans votre salle de bain, quels sont les équipements que vous possédez ?" tags="SalleDeBain" position="550,150" size="100,100">Dans votre salle de bain, quels sont les équipements que vous possédez ?
+]</tw-passagedata><tw-passagedata pid="11" name="Dans votre salle de bain, quels sont les équipements que vous possédez ?" tags="SalleDeBain" position="550,150" size="100,100">Dans votre salle de bain, quels sont les équipements que vous possédez ?
 
-Placard Pharmacie mural Douche
-WC Evier Bidet Baignoire
-Tapis Tapis antidérant Miroir
-Barre de soutient</tw-passagedata></tw-storydata>
+{
+(checkbox: bind $Placard,&quot;Placard&quot;)
+(checkbox: bind $Pharmacie,&quot;Pharmacie&quot;)
+(checkbox: bind $Douche,&quot;Douche&quot;)
+}
+&lt;br&gt;
+{
+(checkbox: bind $WC,&quot;WC&quot;)
+(checkbox: bind $Evier,&quot;Evier&quot;)
+(checkbox: bind $Baignoire,&quot;Baignoire&quot;)
+}
+&lt;br&gt;
+{
+(checkbox: bind $Bidet,&quot;Bidet&quot;)
+(checkbox: bind $Miroir,&quot;Miroir&quot;)
+}
+&lt;br&gt;
+(input: bind $AutreBain,&quot;Autre&quot;)
+
+|bt&gt;[&lt;button&gt;Question Suivante&lt;/button&gt;]
+
+(click:?bt)[
+(go-to:&quot;Avez-vous des meubles encombrant ?&quot;) 
+]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
