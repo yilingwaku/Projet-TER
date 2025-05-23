@@ -1,0 +1,128 @@
+import React, { useState } from "react";
+
+const Questionnaire = () => {
+  const questions = [
+    {
+      question: "Quelles sont les pièces de votre appartement ou maison :",
+      options: [
+        "Entrée",
+        "Salon",
+        "Cuisine",
+        "Salle à manger",
+        "Bureau ou espace de travail",
+        "Chambre principale",
+        "Chambre d’amis",
+        "Salle de bain",
+        "Salle de douche",
+        "WC",
+        "Buanderie",
+        "Cellier",
+        "Dressing",
+        "Terrasse",
+        "Balcon",
+        "Jardin",
+        "Patio",
+        "Véranda",
+        "Cave",
+        "Grenier",
+        "Garage",
+        "Couloir",
+        "Escalier",
+        "Salle de multimédia",
+        "Salle de musique",
+        "Salle de sport",
+        "Bibliothèque",
+        "Atelier",
+        "Piscine",
+      ],
+    },
+    {
+      question: "Quelle est la plus grande planète du système solaire ?",
+      options: ["Terre", "Mars", "Jupiter", "Vénus"],
+    },
+    {
+      question: "Qui a peint la Joconde ?",
+      options: ["Van Gogh", "Picasso", "Da Vinci", "Michel-Ange"],
+    },
+  ];
+
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [userAnswers, setUserAnswers] = useState([]);
+  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [showResults, setShowResults] = useState(false);
+
+  const handleCheckboxChange = (event) => {
+    const { id, checked } = event.target;
+
+    if (checked) {
+      setSelectedOptions((prev) => [...prev, id]);
+    } else {
+      setSelectedOptions((prev) => prev.filter((v) => v !== id));
+    }
+  };
+  const handleNext = () => {
+    // Sauvegarde la réponse actuelle
+    const updatedAnswers = [...userAnswers];
+    updatedAnswers[currentQuestion] = {
+      question: questions[currentQuestion].question,
+      reponses: selectedOptions,
+    };
+    setUserAnswers(updatedAnswers);
+
+    // Passe à la question suivante
+    const next = currentQuestion + 1;
+    if (next < questions.length) {
+      setCurrentQuestion(next);
+      setSelectedOptions([]); // réinitialiser les checkbox
+    } else {
+      setShowResults(true);
+    }
+  };
+
+  if (showResults) {
+    return (
+      <div style={{ padding: "20px", fontFamily: "Arial" }}>
+        <h2>Résultats du questionnaire</h2>
+        {userAnswers.map((entry, index) => (
+          <div key={index}>
+            <h4>{entry.question}</h4>
+            <ul>
+              {entry.reponses.map((r, i) => (
+                <li key={i}>{r}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  return (
+    <div style={{ padding: "20px", fontFamily: "Arial" }}>
+      <h2>
+        Question {currentQuestion + 1} / {questions.length}
+      </h2>
+      <h4>{questions[currentQuestion].question}</h4>
+      {questions[currentQuestion].options.map((option) => (
+        <div key={option}>
+          <input
+            type="checkbox"
+            id={option}
+            value={option}
+            checked={selectedOptions.includes(option)}
+            onChange={handleCheckboxChange}
+          />
+          <label htmlFor={option}>{option}</label>
+        </div>
+      ))}
+      <button onClick={handleNext} style={{ marginTop: "10px" }}>
+        {currentQuestion + 1 === questions.length
+          ? "Voir les résultats"
+          : "Suivant"}
+      </button>
+    </div>
+  );
+};
+
+export default Questionnaire;
+

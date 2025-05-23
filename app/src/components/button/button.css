@@ -1,0 +1,36 @@
+.button {
+    display: flex;
+    border: solid 4px var(--foreground);    
+    box-shadow: 4px 4px 0px var(--foreground);
+    cursor: pointer;
+}
+
+.button:active, .disable-button {
+    box-shadow: none;
+    transform: translate(4px, 4px);
+}
+
+.button:active, .disable-button {
+    opacity: 0.4;
+}
+
+.default-button {
+    flex-direction: row;
+    border-radius: 30px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--foreground);
+    color: var(--background);
+    width: 160px
+}
+
+.secondary-button {
+    background-color: var(--background);
+    color: var(--foreground);
+}
+
+.back-button {
+    width: 160px;
+}

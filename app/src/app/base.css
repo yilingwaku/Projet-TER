@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/* font */
+@font-face {
+  font-family: 'Sofia Sans';
+  src: url('/fonts/SofiaSans[wght].ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  --background: #F9F7F7;
+  --foreground: #000000;
+  --font-sofia: "Sofia Sans", sans-serif;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sofia);
+  font-weight: 500;
+  height: 100vh;
+  width: 100vw;
+}
+
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.view {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow-y: scroll;
+}
+
+.thread {
+  width: 100%;
+  max-width: 480px;
+  min-height: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px 30px;
+  padding-bottom: 110px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 330px;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -165px;
+  gap: 10px;
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-item {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.lg-text {
+  font-size: 32px;
+}
+
+.md-text {
+  font-size: 24px;
+}
+
+.sm-text {
+  font-size: 20px;
+}
