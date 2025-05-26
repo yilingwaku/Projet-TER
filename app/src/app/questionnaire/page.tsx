@@ -4,8 +4,6 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-import React, { useState } from "react";
-
 const Questionnaire = () => {
   //Fichier des questions, toujours laisser en premieres questions les pièces de l'appartement
   const allQuestions = [
@@ -138,7 +136,7 @@ const Questionnaire = () => {
       const hasBuanderie = selectedOptions.includes("Buanderie");
       const hasCellier = selectedOptions.includes("Cellier");
       const hasDressing = selectedOptions.includes("Dressing");
-      const hasTerrasse = selectedOptions.includes("Terrasse");
+      const hasTerrasse = selectedOpti<Bar icon="Megaphone" title="Prévention" color="#e5c39a" />ons.includes("Terrasse");
       const hasBalcon = selectedOptions.includes("Balcon");
       const hasJardin = selectedOptions.includes("Jardin");
       const hasPatio = selectedOptions.includes("Patio");
