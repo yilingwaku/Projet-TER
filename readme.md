@@ -63,7 +63,7 @@ Get-Process | Where-Object { $_.Path -like "*ollama*" }
 ### Run
 Lancer le serveur ollama avec le modèle d'intelligence artificielle.
 ```
-ollama serve & ollama run llama3.2:3b
+ollama serve ; ollama run llama3.2:3b
 ```
 
 # 📀 Install *Services*

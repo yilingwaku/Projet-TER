@@ -4,6 +4,10 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
+const ReponseQuest = {
+  question: [],
+  reponse : [],
+}
 const Questionnaire = () => {
   //Fichier des questions, toujours laisser en premieres questions les pièces de l'appartement
   const allQuestions = [
@@ -38,18 +42,19 @@ const Questionnaire = () => {
         "Salle de sport",
         "Bibliothèque",
         "Atelier",
-        "Piscine",
+        "Piscine"
       ],
     },
     {
-      question: "Dans votre entrée, quels sont vos équipements ?",
+      question: "Dans votre entrée, quels sont vos équipementsv présent ?",
       options: [
-        "Console d'entrée",
-        "Tapis",
-        "Banc",
         "Porte-manteau",
+        "Console d'entrée",
         "Rangement chaussure",
+        "Banc",
+        "Tapis",
         "Porte-parapluie",
+        "Détecteur de fumée"
       ],
     },
     {
@@ -66,6 +71,7 @@ const Questionnaire = () => {
         "Meuble Télé",
         "Vitrine",
         "Coffre",
+        "Détecteur de fumée"
       ],
     },
     {
@@ -84,12 +90,111 @@ const Questionnaire = () => {
         "Plancha",
         "Robot cuiseur",
         "Placard",
+        "Détecteur de fumée",
+        "Lave-vaisselle",
+        "Lave-linge",
+        "Sèche-linge"
       ],
     },
     {
-      question: "Qui a peint la Joconde ?",
-      options: ["Van Gogh", "Picasso", "Da Vinci", "Michel-Ange"],
+      question: "Dans votre salle à manger, quels équipements parmi les suivants avez-vous ? ",
+      options: [
+        "Table à manger", 
+        "Chaises",
+        "Buffet", 
+        "Suspension ou lustres",
+        "Tapis",
+        "Rideaux",
+        "Nappe",
+        "Vitrine",
+        "Décoration murales",
+        "Détecteur de fumée"
+      ],
     },
+    {
+      question: "Dans votre chambre principale ou celle d'amis, quels sont les équimpements présent ?",
+      options : [
+        "Lit",
+        "Commode",
+        "Coffre",
+        "Table de chevet",
+        "Armoire",
+        "Détecteur de fumée"
+      ],
+    },
+    {
+      question : "Dans votre salle de bain, salle de douche, vos équipements que celle-ci possède ?",
+      options : [
+        "Evier",
+        "Douche",
+        "Tapis",
+        "Meuble",
+        "Poubelle",
+        "Rangement de douche",
+        "Panier à linge",
+        "Tabouret",
+        "Marchepied",
+        "Barre d'appui",
+        "Lave-linge",
+        "Sèche-linge"
+      ],
+    },
+    {
+      question:"Quels sont les équipements dans vos WC ?",
+      options: [
+        "Cadre de sécurité",
+        "Meuble de rangement",
+        "Poubelle",
+        "Barre d'appui",
+        "Abattant rehausseur"
+      ],
+    },
+    {
+      question : "Dans votre buanderie?",
+      options : [
+        "Sèche-linge",
+        "Lave-linge",
+        "Etendoir à linge",
+        "Marchepied",
+        "Tapis"
+      ],
+    },
+    {
+      question: "Quels slont les équipements que vous possédez sur votre terrasse, votre jardin, votre patio ?",
+      options : [
+        "Lit",
+        "Fauteuil",
+        "Canapé",
+        "Bain de soleil",
+        "Table",
+        "Table basse"
+      ],
+    },
+    {
+      question : "Dans votre couloir, vous possédez ?",
+      options: [
+        "Coffre",
+        "Meubles de rangement",
+        "Meubles encombrants"
+      ],
+    },
+    {
+      question : "Quels sont les équipements dans votre escalier ?",
+      options : [
+        "Rambarde",
+        "Marche antidérapante",
+        "Rebord antidérapant",
+        "Tapis d'escalier"
+      ],
+    },
+    {
+      question : "Vous avez une piscine, quels sont les équipements que vous possédez ?",
+      options : [
+        "Des marches à pente douce",
+        "Un siège d'accès",
+        "Une échelle à marche"
+      ],
+    }
   ];
   //L'index des questions, les réponses donnée par l'utilisateur, les checkbox selectionnées, les résultats
   //Et l'ordre des question
@@ -136,7 +241,7 @@ const Questionnaire = () => {
       const hasBuanderie = selectedOptions.includes("Buanderie");
       const hasCellier = selectedOptions.includes("Cellier");
       const hasDressing = selectedOptions.includes("Dressing");
-      const hasTerrasse = selectedOpti<Bar icon="Megaphone" title="Prévention" color="#e5c39a" />ons.includes("Terrasse");
+      const hasTerrasse = selectedOptions.includes("Terrasse");
       const hasBalcon = selectedOptions.includes("Balcon");
       const hasJardin = selectedOptions.includes("Jardin");
       const hasPatio = selectedOptions.includes("Patio");
@@ -161,6 +266,33 @@ const Questionnaire = () => {
       }
       if (hasCuisine) {
         setQuestionOrder((prevOrder) => [...prevOrder, 3]);
+      }
+      if (hasSalleManger) {
+        setQuestionOrder((prevOrder) => [...prevOrder, 4]);
+      }
+      if (hasChambrePrinc||hasChambreAmis) {
+        setQuestionOrder((prevOrder) => [...prevOrder, 5]);
+      }
+      if (hasSalleBain||hasSalleDouche) {
+        setQuestionOrder((prevOrder) => [...prevOrder, 6]);
+      }
+      if (hasWC) {
+        setQuestionOrder((prevOrder) => [...prevOrder, 7]);
+      }
+      if (hasBuanderie) {
+        setQuestionOrder((prevOrder) => [...prevOrder, 8]);
+      }
+      if (hasTerrasse||hasJardin||hasPatio) {
+        setQuestionOrder((prevOrder) => [...prevOrder, 9]);
+      }
+      if (hasCouloir) {
+        setQuestionOrder((prevOrder) => [...prevOrder, 10]);
+      }
+      if (hasEscalier) {
+        setQuestionOrder((prevOrder) => [...prevOrder, 11]);
+      }
+      if (hasPiscine) {
+        setQuestionOrder((prevOrder) => [...prevOrder, 12]);
       }
     }
 
