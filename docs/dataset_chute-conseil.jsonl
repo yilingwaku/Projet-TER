@@ -5,11 +5,11 @@
 {"instruction": "Faut-il prendre des compléments alimentaires pour prévenir les chutes ?", "input": "", "output": "Oui, le calcium et la vitamine D aident à renforcer les os et à prévenir les fractures."}
 {"instruction": "Comment les soins des pieds contribuent-ils à prévenir les chutes ?", "input": "", "output": "Des pieds en bonne santé améliorent la stabilité. Consultez un·e pédicure pour éviter douleurs et déséquilibres."}
 {"instruction": "Faut-il utiliser un escabeau à la maison ?", "input": "", "output": "Non, il vaut mieux éviter les escabeaux car ils augmentent fortement le risque de chute, surtout en cas de perte d'équilibre."}
-{"instruction": "Que faire pour rendre son logement plus sûr ?", "input": "", "output": "Modifiez ou repositionnez les meubles pour faciliter les déplacements et limiter les risques d’obstacles."}
-{"instruction": "Comment organiser ses placards pour limiter les chutes ?", "input": "", "output": "Rangez les objets du quotidien à hauteur accessible pour éviter de devoir grimper ou se pencher excessivement."}
+{"instruction": "Que faire pour rendre son logement plus sûr ?", "input": "", "output": "Les meubles peuvent vous déranger, déplacer les pour faciliter les déplacements et limiter les risques d’obstacles."}
+{"instruction": "Comment organiser ses placards pour limiter les chutes ?", "input": "", "output": "Mettre les objets du quotidien à hauteur accessible pour éviter de devoir grimper ou se pencher excessivement."}
 {"instruction": "Pourquoi faut-il vérifier la hauteur de son lit ?", "input": "", "output": "Un lit trop bas ou trop haut peut compliquer les mouvements et augmenter le risque de chute en se levant ou en s’allongeant."}
-{"instruction": "Quels objets faut-il retirer du sol pour éviter de trébucher ?", "input": "", "output": "Enlevez les outils, câbles, tuyaux ou tout autre obstacle qui pourrait faire trébucher."}
-{"instruction": "Que faire en cas de besoin de travaux en hauteur ?", "input": "", "output": "Demandez à une personne plus jeune ou à un professionnel plutôt que de prendre des risques inutiles."}
+{"instruction": "Quels objets faut-il retirer du sol pour éviter de trébucher ?", "input": "", "output": "Enlever les outils, câbles, tuyaux ou tout autre obstacle qui pourrait faire trébucher."}
+{"instruction": "Que faire en cas de besoin de travaux en hauteur ?", "input": "", "output": "Demander à une personne plus jeune ou à un professionnel plutôt que de prendre des risques inutiles."}
 {"instruction": "Qu’est-ce que la Semaine Bleue et quel est son lien avec la prévention des chutes ?", "input": "", "output": "La Semaine Bleue est une campagne de sensibilisation pour le bien vieillir, incluant des actions de prévention contre les chutes."}
 {"instruction": "Peut-on réduire les chutes en adaptant son mode de vie ?", "input": "", "output": "Oui, une bonne hygiène de vie incluant activité physique, alimentation adaptée et aménagement du domicile réduit le risque de chute."}
 {"instruction": "Pourquoi faut-il consulter un pédicure régulièrement ?", "input": "", "output": "Des pieds douloureux ou mal soignés peuvent déséquilibrer la marche. Un pédicure peut prévenir ces problèmes."}
@@ -21,7 +21,7 @@
 {"instruction": "À quel moment faut-il penser à la vitamine D ?", "input": "", "output": "La vitamine D est essentielle à l’absorption du calcium. Elle est souvent prescrite en prévention des chutes chez les personnes âgées."}
 {"instruction": "Quels sont les bénéfices d’un suivi podologique ?", "input": "", "output": "Un·e pédicure peut corriger ou traiter les douleurs plantaires, les ongles incarnés ou les déformations qui nuisent à l’équilibre."}
 {"instruction": "Quels sont les dangers liés à l’utilisation d’un escabeau ?", "input": "", "output": "Tomber d’un escabeau est une cause fréquente de blessures domestiques. Il vaut mieux éviter son usage seul ou sans stabilité."}
-{"instruction": "Comment sécuriser un couloir étroit ?", "input": "", "output": "Retirez les meubles superflus, éclairez bien le passage et fixez les tapis pour faciliter la circulation sans risque."}
+{"instruction": "Comment sécuriser un couloir étroit ?", "input": "", "output": "Retirer les meubles superflus, éclairer bien le passage et fixer les tapis pour faciliter la circulation sans risque."}
 {"instruction": "Pourquoi organiser ses affaires à hauteur accessible ?", "input": "", "output": "Cela évite de devoir grimper ou se pencher, deux mouvements à risque de déséquilibre et de chute."}
 {"instruction": "Comment choisir un lit adapté pour limiter les risques ?", "input": "", "output": "Le lit doit être à hauteur du genou environ. Trop bas ou trop haut, il peut gêner les transferts et favoriser les chutes."}
 {"instruction": "Quel type d’objets au sol sont les plus dangereux ?", "input": "", "output": "Les câbles, outils, seaux ou sacs peuvent être oubliés au sol et causer des trébuchements inattendus."}
@@ -41,5 +41,5 @@
 {"instruction": "Pourquoi éviter de porter plusieurs choses à la fois ?", "input": "", "output": "Porter trop d’objets masque votre vue, vous déséquilibre et vous empêche de réagir en cas de faux pas."}
 {"instruction": "Que faire en cas de baisse d’équilibre ou vertige ?", "input": "", "output": "Asseyez-vous immédiatement, appelez à l’aide si besoin, et évitez tout déplacement jusqu’au retour à la normale."}
 {"instruction": "Les cannes ou déambulateurs sont-ils utiles ?", "input": "", "output": "Oui, ils améliorent l’équilibre et la stabilité, surtout dans les déplacements prolongés ou en extérieur."}
-{"instruction": "Faut-il éviter les sols glissants ?", "input": "", "output": "Oui, privilégiez les sols antidérapants, en particulier dans la salle de bain et la cuisine."}
+{"instruction": "Faut-il éviter les sols glissants ?", "input": "", "output": "Oui, privilégier les sols antidérapants, en particulier dans la salle de bain et la cuisine."}
 {"instruction": "Quels sont les bienfaits du tai-chi pour la prévention des chutes ?", "input": "", "output": "Le tai-chi améliore la posture, l’équilibre, la souplesse et la conscience corporelle, réduisant significativement les chutes."}
