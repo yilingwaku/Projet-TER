@@ -32,6 +32,19 @@ Installez les dépendances nécessaires aux lancement de l'application.
 ```
 npm install
 ```
+Si la fonction npm n'existe pas, installer NodeJs
+[le site](https://nodejs.org/en)
+
+Et ajouter le au PATH de votre machine
+[tuto](https://www.java.com/fr/download/help/path.html)
+Tuto pour Windows 8/10 :
+```
+1.Dans Rechercher, lancez une recherche et sélectionnez : Système (Panneau de configuration)
+2.Cliquez sur le lien Paramètres système avancés.
+3.Cliquez sur Variables d'environnement. Dans la section Variables système recherchez la variable d'environnement PATH et sélectionnez-la. Cliquez sur Modifier. Si la variable d'environnement PATH n'existe pas, cliquez sur Nouvelle.
+4.Dans la fenêtre Modifier la variable système (ou Nouvelle variable système), indiquez la valeur de la variable d'environnement PATH. Cliquez sur OK. Fermez toutes les fenêtres restantes en cliquant sur OK.
+5.Ouvrez à nouveau la fenêtre d'invite de commande et exécutez votre code Java.
+```
 
 ### Run
 Lancer l'application.
@@ -66,7 +79,7 @@ Get-Process | Where-Object { $_.Path -like "*ollama*" }
 ### Run
 Lancer le serveur Ollama avec le modèle d'intelligence artificielle.
 ```
-ollama serve & ollama run llama3.2:3b
+ollama serve ; ollama run llama3.2:3b
 ```
 
 # 📀 Install *Services*

@@ -1,0 +1,14 @@
+function JourActuel() {
+  const jours = [
+    "Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"
+  ];
+
+  const aujourdhui = new Date();
+  const jourSemaine = jours[aujourdhui.getDay()];
+
+  return (
+    <div style={{ fontFamily: "Arial", fontSize: "20px", margin: "20px" }}>
+      Aujourd'hui, nous sommes <strong>{jourSemaine}</strong>.
+    </div>
+  );
+}
