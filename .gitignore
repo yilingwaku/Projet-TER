@@ -4,19 +4,7 @@
 .vscode/
 .idea/
 
-# dependencies
-node_modules/
-npm-debug.log*
-
-# production
-build/
-
-# cache
-__pycache__/
-
 # env
-venv/
-env/
 .env.*
 
 # misc
@@ -27,3 +15,4 @@ env/
 .Trashes
 ehthumbs.db
 Thumbs.db
+*.pem

@@ -1,0 +1,15 @@
+.bar {
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 4px var(--foreground);
+}
+
+.bar-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

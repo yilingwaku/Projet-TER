@@ -1,39 +1,25 @@
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-import requests
-import fastapi
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from src.router import router
 
 app = FastAPI()
 
-OLLAMA_URL = "http://localhost:11434/api/chat"
-MODEL_NAME = "llama3.2:3b"
-API_VERSION = "1.0.0-a"
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-class PromptRequest(BaseModel):
-    prompt: str
+app.include_router(router)
+
 
 @app.get("/")
 async def root():
     return {
-        "api_version": API_VERSION,
-        "fastapi_version": fastapi.__version__,
-        "model": MODEL_NAME
+        "status": "success",
+        "api_version": "1.0.0-a",
+        "fastapi_version": "0.110.0",
+        "model": "llama3.2:3b"
     }
-
-@app.post("/ask")
-def ask_model(request: PromptRequest):
-    payload = {
-        "model": MODEL_NAME,
-        "messages": [
-            {"role": "user", "content": request.prompt}
-        ],
-        "stream": False
-    }
-
-    try:
-        response = requests.post(OLLAMA_URL, json=payload)
-        response.raise_for_status()
-        data = response.json()
-        return {"response": data.get("message", {}).get("content", "No content returned")}
-    except requests.RequestException as e:
-        raise HTTPException(status_code=500, detail=str(e))

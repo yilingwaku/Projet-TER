@@ -21,7 +21,7 @@ Guide d'installation et de lancement de l'application web.
 ### Move
 Déplacez-vous dans le dossier de l'application.
 ```bash
-cd chatbot-app
+cd app
 ```
 
 ### Dependencies
@@ -49,7 +49,7 @@ Télécharger le modèle de l'intelligence artificielle avec ollama.
 ollama pull llama3.2:3b
 ```
 ### ⚠️ optional
-Arrêter ollama. La prochaine étape peut ne pas fonctionner si ollama est déjà démarré.
+Arrêter ollama. La prochaine étape peut ne pas fonctionner si ollama est déjà démarré.<br><br>
 **Linux / MacOS**
 ```bash
 ps aux | grep ollama
@@ -81,13 +81,18 @@ Créez un environnement virtuel.
 ```
 python -m venv env
 ```
-Lancez l'environnement virtuel créer précédemment.
+Lancez l'environnement virtuel créer précédemment.<br><br>
+**Windows (Shell)**
 ```
 env\Scripts\activate
 ```
-or
+or **Windows (PowerShell)**
 ```
 .\env\Scripts\Activate.ps1
+```
+or **Linux / MacOS**
+```
+source env/bin/activate
 ```
 
 ### ⚠️ optional

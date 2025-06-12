@@ -1,0 +1,8 @@
+docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+
+docker run -d \
+  --name mongodb \
+  -p 27017:27017 \
+  -e MONGO_INITDB_ROOT_USERNAME=user \
+  -e MONGO_INITDB_ROOT_PASSWORD="cvva1xauAM5kpZpp" \
+  mongo

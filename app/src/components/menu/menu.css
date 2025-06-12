@@ -1,0 +1,23 @@
+.menu {
+    display: flex;
+    width: 330px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.menu-item {
+    flex-direction: column;
+    border-radius: 30px;
+    height: 160px;
+    width: 160px;
+    padding: 20px;
+}
+
+.ontop-menu-item {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    height: 80px;
+    width: 330px;
+}
