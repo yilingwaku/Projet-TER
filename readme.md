@@ -18,6 +18,9 @@ Valentin LUGINBUHL : valentin.luginbuhl@etu.univ-grenoble-alpes.fr<br>
 # 💿 - Install *Application***
 Guide d'installation et de lancement de l'application web.
 
+### Download
+Télécharger NodeJS sur [le site](https://nodejs.org/fr).
+
 ### Move
 Déplacez-vous dans le dossier de l'application.
 ```bash
@@ -41,10 +44,10 @@ npm run dev
 Guide d'installation et de lancement du modèle d'intelligence artificielle.
 
 ### Download
-Télécharger ollama sur [le site](https://ollama.com/).
+Télécharger Ollama sur [le site](https://ollama.com/).
 
 ### Model
-Télécharger le modèle de l'intelligence artificielle avec ollama.
+Télécharger le modèle de l'intelligence artificielle avec Ollama.
 ```
 ollama pull llama3.2:3b
 ```
@@ -61,14 +64,14 @@ Get-Process | Where-Object { $_.Path -like "*ollama*" }
 ```
 
 ### Run
-Lancer le serveur ollama avec le modèle d'intelligence artificielle.
+Lancer le serveur Ollama avec le modèle d'intelligence artificielle.
 ```
 ollama serve & ollama run llama3.2:3b
 ```
 
 # 📀 Install *Services*
 ### ⚠️ **nécessaire au bon fonctionnement de l'application
-Guide d'installation et de lancement des service.
+Guide d'installation et de lancement des services.
 
 ### Move
 Déplacez-vous dans le dossier des services.
@@ -78,6 +81,8 @@ cd services
 
 ### Environnement
 Créez un environnement virtuel.
+
+**Windows**
 ```
 python -m venv env
 ```
@@ -111,6 +116,17 @@ pip install -r requirements.txt
 Lancer les services.
 ```
 uvicorn main:app --reload
+```
+
+# 🐋 - Docker
+### Download
+Télécharger Docker sur [le site](https://www.docker.com/get-started/).
+
+### Run
+You can use Docker:
+```bash
+docker build -t sitomnia-image .
+docker run -d -p 8000:8000 --name sitomnia-project sitomnia-image
 ```
 
 # 📄 - Documentation

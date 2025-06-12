@@ -9,7 +9,7 @@ MODEL_NAME = "llama3.2:3b"
 async def stream_ollama_response(request: PromptRequest):
     payload = {
         "model": MODEL_NAME,
-        "messages": [msg.dict() for msg in request.messages],
+        "messages": [msg.model_dump() for msg in request.messages],
         "stream": True
     }
 

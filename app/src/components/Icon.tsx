@@ -36,7 +36,13 @@ import {
     Check,
     RotateCcw,
     CircleHelp,
-    Bug
+    Bug,
+    BellPlus,
+    Clock,
+    Eraser,
+    Calendar,
+    SquareChartGantt,
+    Calendar1
 } from "lucide-react";
 
 const icons = {
@@ -75,7 +81,13 @@ const icons = {
     Check,
     RotateCcw,
     CircleHelp,
-    Bug
+    Bug,
+    BellPlus,
+    Clock,
+    Eraser,
+    Calendar,
+    SquareChartGantt,
+    Calendar1
 };
 
 const Icon = ({ icon, size }) => {

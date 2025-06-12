@@ -11,13 +11,13 @@ const Demarrage = () => {
         <div className="view">
             <div className="thread">
                 <span className="sm-text">
-                    Bienvenue !
+                    Démarrage de l'application.
                 </span>
 
                 <div className='content'>
 
                     <span className="md-text">
-                        Sitomnia est un application qui permet de suivre et organiser votre quotidien en tant que sénior.
+                        Sitomnia est une application qui permet de suivre et organiser votre quotidien en tant que sénior.
                         Elle vous aide à gérer votre quotidien grâce à un agenda, un carnet de notes, un assistant personnel intelligent.
                         Vous retrouverez aussi des informations préventives concernant la santé et la vie quotidienne.
                     </span>

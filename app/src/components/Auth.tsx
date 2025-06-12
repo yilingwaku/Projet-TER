@@ -9,6 +9,7 @@ import { useUser } from '@/context/UserContext';
 import { useDiscussion } from "@/context/DiscussionContext";
 import { useNote } from "@/context/NotesContext";
 import { useRisk } from "@/context/RiskContext";
+import { useAgenda } from "@/context/AgendaContext";
 
 export default function Auth({ children }: { children: React.ReactNode }) {
   const router = useRouter();
@@ -18,6 +19,7 @@ export default function Auth({ children }: { children: React.ReactNode }) {
   const { updateDiscussions } = useDiscussion();
   const { updateNotes } = useNote();
   const { updateRiks } = useRisk();
+  const { updateAgenda } = useAgenda();
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -55,6 +57,7 @@ export default function Auth({ children }: { children: React.ReactNode }) {
         updateDiscussions(res.user.discussions);
         updateNotes(res.user.notes);
         updateRiks(res.user.preventions);
+        updateAgenda(res.user.agenda);
       }
     };
 

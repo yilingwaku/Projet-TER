@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 import ActionButton from "../button/ActionButton";
 
-const LinkModal = ({ icon, title, onDelete }) => {
+const LinkModal = ({ icon, title, text, onDelete }) => {
 
   const [isDelete, setIsDelete] = useState(false);
 
@@ -13,7 +13,7 @@ const LinkModal = ({ icon, title, onDelete }) => {
     
     const view = document.querySelector(".view") as HTMLElement;
     if (view && !isDelete) {
-      view.style.opacity = "0.08";
+      view.style.opacity = "0.05";
       setIsDelete(true);
     } else if (view && isDelete) {
       view.style.opacity = "1";
@@ -42,7 +42,7 @@ const LinkModal = ({ icon, title, onDelete }) => {
         <div className="modal-container">
 
           <span className="md-text">
-            Êtes-vous sûr de vouloir vous déconnecter ?
+            { text }
           </span>
 
           <div className="modal-item">

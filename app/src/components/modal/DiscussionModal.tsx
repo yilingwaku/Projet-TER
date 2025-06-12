@@ -47,7 +47,7 @@ const DiscussionModal = ({ prompt, setPrompt, onSend, isLoading }: {
     
     const view = document.querySelector(".view") as HTMLElement;
     if (view && !isWriting && !isDictating) {
-      view.style.opacity = "0.08";
+      view.style.opacity = "0.04";
     } else if (view && (isWriting || isDictating)) {
       view.style.opacity = "1";
     }

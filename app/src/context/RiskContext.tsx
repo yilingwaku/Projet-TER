@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 
-import type { Risk } from '@assets/data/risks';
+import type { Risk } from '@/assets/datas/risks';
 
 import { updateUserData } from "@controller/UserController";
 

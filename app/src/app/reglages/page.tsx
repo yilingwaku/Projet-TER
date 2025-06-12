@@ -23,7 +23,7 @@ const Reglages = () => {
       <div className="view">
         <div className="thread">
           <span className="sm-text">
-            Gérer la paramétrage de vos informations afin de personnaliser l'expérience.
+            Gérer la paramétrage de l'application afin de personnaliser l'expérience.
           </span>
 
           <div className='content'>
@@ -89,7 +89,7 @@ const Reglages = () => {
 
           </div>
 
-          <div className='content'>
+          {/* <div className='content'>
             <span className="md-text mb-[-10px]">
               Rapport de bug
             </span>
@@ -104,18 +104,18 @@ const Reglages = () => {
               onClick={() => router.push('mailto:valentin.luginbuhl@etu.univ-grenoble-alpes.fr?subject=Rapport de bug - Sitomnia')}
             />
 
-          </div>
+          </div> */}
 
         </div>
       </div>
 
       <DeleteModale
         icon="Unplug"
-        title="Quitter"
-        subtitle="Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible."
+        title="Éteindre"
+        text="Êtes-vous sûr de vouloir quitter l'application ?"
         onDelete={() => {
-          localStorage.clear();
-          router.replace('/demarrage');
+          localStorage.removeItem('token');
+          router.replace('/connexion');
         }}
       />
 

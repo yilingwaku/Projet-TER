@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect, use } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 import Bar from '@/components/Bar';
@@ -28,7 +28,7 @@ const Connexion = () => {
   }, []);
 
   const validateEmail = (value) => {
-    const regex = /^[^\s@]{2,}@[^\s@]{2,}\.[^\s@]{2,}$/;
+    const regex = /^[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)*@[a-zA-Z0-9]+\.[a-zA-Z0-9]{2,}$/;
     return regex.test(value);
   };
 
@@ -71,7 +71,7 @@ const Connexion = () => {
 
   return (
     <>
-      <Bar icon="User" title="Compte" color="#F9F7F7" noBack />
+      <Bar icon="User" title="Compte" color="#F9F7F7" />
 
       <div className="view">
         <div className="thread">

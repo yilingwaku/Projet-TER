@@ -28,12 +28,12 @@ const Notes = () => {
             ) : (
               notes.slice().reverse().map((note) => (
                 <Bubble isDescription
-                  icon="Search"
-                  title="Aperçu"
+                  icon="Clock"
+                  title={note.date}
                   onClick={() => router.push(`/notes/details?id=${note.id}`)}
                   key={note.id}>
                   {note.content
-                    ? note.content.slice(0, 42) + (note.content.length > 42 ? '...' : '')
+                    ? note.content.slice(0, 47) + (note.content.length > 47 ? '...' : '')
                     : 'Aucun contenu'}
                 </Bubble>
               ))

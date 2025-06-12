@@ -12,6 +12,7 @@ import { DiscussionProvider } from '@/context/DiscussionContext';
 import { RiskProvider } from '@/context/RiskContext';
 import { NoteProvider } from "@/context/NotesContext";
 import { UserProvider } from '@/context/UserContext';
+import { AgendaProvider } from "@/context/AgendaContext";
 
 export default function RootLayout({
   children,
@@ -19,17 +20,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body className="antialiased">
         <main>
           <NoteProvider>
             <DiscussionProvider>
               <RiskProvider>
-                <UserProvider>
-                  <Auth>
-                    {children}
-                  </Auth>
-                </UserProvider>
+                <AgendaProvider>
+                  <UserProvider>
+                    <Auth>
+                      {children}
+                    </Auth>
+                  </UserProvider>
+                </AgendaProvider>
               </RiskProvider>
             </DiscussionProvider>
           </NoteProvider>

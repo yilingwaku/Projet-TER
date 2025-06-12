@@ -2,7 +2,7 @@ import React from "react";
 
 import "./text.css";
 
-const TextField = ({ title, subtitle, value, placeholder, type, handleChange, inputRef, onKeyDown, isDisable }) => {
+const TextField = ({ title, subtitle, value, placeholder, type, handleChange, inputRef, onKeyDown, isDisable, onFocus }) => {
   
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
@@ -24,6 +24,7 @@ const TextField = ({ title, subtitle, value, placeholder, type, handleChange, in
         value={value}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
+        onFocus={onFocus}
       />
     </>
   );

@@ -3,7 +3,7 @@ import React from "react";
 import Icon from "../Icon";
 import "./text.css";
 
-const Bubble = ({ children, isDescription, icon, title, onClick } : { children : React.ReactNode }) => {
+const Bubble = ({ children, isDescription, icon, title, title2, icon2, onClick } : { children : React.ReactNode }) => {
       const classNameIsDescription = isDescription ? "description-bubble" : "";
 
       return (
@@ -13,6 +13,8 @@ const Bubble = ({ children, isDescription, icon, title, onClick } : { children :
                     <div className='bubble-title'>
                         <Icon icon={icon} size={20}/>
                         <span className="sm-text">{title}</span>
+                        <Icon icon={icon2} size={20}/>
+                        <span className="sm-text">{title2}</span>
                     </div>
                     <span className="md-text">{children}</span>
                 </div>

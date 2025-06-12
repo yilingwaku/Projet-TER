@@ -6,13 +6,14 @@ import { updateUserData } from "@controller/UserController";
 
 type Note = {
   id: string;
+  date: string;
   content: string;
 };
 
 type NoteContextType = {
   notes: Note[];
   getNote: (id: string) => Note | undefined;
-  addOrUpdateNote: (id: string, content: string) => void;
+  addOrUpdateNote: (id: string, content: string, date: string) => void;
   updateNotes: (newNotes: Note[]) => void;
 };
 
@@ -26,13 +27,13 @@ export const NoteProvider = ({ children }: { children: React.ReactNode }) => {
 
   const getNote = (id: string) => notes.find(n => n.id === id);
 
-  const addOrUpdateNote = (id: string, content: string) => {
+  const addOrUpdateNote = (id: string, content: string, date: string) => {
     setNotes(prev => {
       const existing = prev.find(n => n.id === id);
       if (existing) {
-        return prev.map(n => (n.id === id ? { ...n, content } : n));
+        return prev.map(n => (n.id === id ? { ...n, content, date } : n));
       }
-      return [...prev, { id, content }];
+      return [...prev, { id, content, date }];
     });
   };
 

@@ -47,3 +47,8 @@
     background-color: #ef6461;
     color: black;
 }
+
+.example-button {
+    width: fit-content;
+    padding: 0 10px;
+}

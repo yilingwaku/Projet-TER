@@ -10,7 +10,12 @@ import { useNote } from '@/context/NotesContext';
 import { Mirage } from 'ldrs/react';
 import 'ldrs/react/Mirage.css';
 
+import { v4 as uuidv4 } from 'uuid';
+import Icon from '@/components/Icon';
+
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+
+import { formatDateFr } from '@/utils/date';
 
 const Details = () => {
   const searchParams = useSearchParams();
@@ -19,6 +24,8 @@ const Details = () => {
 
   const { getNote, addOrUpdateNote } = useNote();
   const [content, setContent] = useState('');
+  const [date, setDate] = useState('');
+
   const [prevTranscript, setPrevTranscript] = useState('');
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -34,7 +41,10 @@ const Details = () => {
 
   useEffect(() => {
     if (!noteId) {
-      const id = crypto.randomUUID();
+      const id = uuidv4();
+      const now = formatDateFr(new Date());
+      setDate(now);
+
       router.replace(`/notes/details?id=${id}`);
       return;
     }
@@ -42,6 +52,7 @@ const Details = () => {
     const existingNote = getNote(noteId);
     if (existingNote) {
       setContent(existingNote.content);
+      setDate(existingNote.date);
     }
   }, [noteId, getNote, router]);
 
@@ -53,13 +64,13 @@ const Details = () => {
     if (listening) {
       const newText = transcript.slice(prevTranscript.length);
       if (newText) {
-        const updated = content + (content.endsWith(' ') ? '' : ' ') + newText;
+        const updated = content + newText;
 
         setContent(updated);
         setPrevTranscript(transcript);
 
         if (noteId) {
-          addOrUpdateNote(noteId, updated);
+          addOrUpdateNote(noteId, updated, date);
         }
       }
     }
@@ -80,7 +91,7 @@ const Details = () => {
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setContent(e.target.value);
     if (noteId) {
-      addOrUpdateNote(noteId, e.target.value);
+      addOrUpdateNote(noteId, e.target.value, date);
     }
   };
 
@@ -105,6 +116,11 @@ const Details = () => {
           </span>
 
           <div className="content">
+
+            <span className="sm-text">
+              {date}
+            </span>
+
             <textarea
               className="md-text auto-textarea"
               autoFocus
@@ -119,6 +135,14 @@ const Details = () => {
             />
             {listening && <Mirage size="40" speed="4" color="black" />}
           </div>
+
+            <div className="flex gap-[10px]">
+              <div className='pt-1'><Icon icon="Info" size={20}/></div>
+              <span className="sm-text w-fit">
+                <i>Un contenu vide supprime la note.</i>
+              </span>
+            </div>
+          
         </div>
       </div>
 

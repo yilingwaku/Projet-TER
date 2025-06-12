@@ -24,6 +24,7 @@
       "@components/*": ["./src/components/*"],
       "@context/*": ["./src/context/*"],
       "@controller/*": ["./src/controller/*"],
+      "@utils/*": ["./src/utils/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
