@@ -66,6 +66,22 @@ const risks: Risk[] = [
         prevents:"- Surveiller l'utilisation\n- Entretenir les appareils régulièrement\n- Mettre un chronomètre lors de l'utilisation de ses appareils"
       },
       {
+        title: "Gazinière",
+        isChecked: false,
+        slug: "incendie-intoxication",
+        risks:"- Incendie : Risque d'incendie par l'utilisation de la gazinière\n- Intoxication : Risque de laisser le gaz allumé",
+        where:"Cuisine",
+        prevents:"- Si une odeur forte se fait sentir, il faut ouvrir les fenêtres"
+      },
+      {
+        title: "Placard",
+        isChecked: false,
+        slug: "chute",
+        risks:"- Chute : Risque de chute si les placards sont trop haut\n- Blessure : Se prendre le coin de la porte du placard",
+        where:"Cuisine,SalledeBain",
+        prevents:"- Il faut mettre les placards à votre niveau, pas en hauteur\n- Mettre des rebords en caoutchouc pour éviter de se blesser"
+      },
+      {
         title: "Coupures",
         isChecked: false,
         slug: "coupures-cuisine",
