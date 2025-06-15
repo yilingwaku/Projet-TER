@@ -1,22 +1,20 @@
 const allQuestions = [
   {
-    question: "Quelles sont les pièces de votre appartement ou maison :",
+    question: "Quelles sont les pièces de votre appartement ou maison en intérieur :",
     options: [
       "Entrée",
       "Salon",
       "Cuisine",
       "Salle à manger",
-      "Bureau ou espace de travail",
-      "Chambre principale",
-      "Chambre d’amis",
-      "Salle de bain",
-      "Salle de douche",
+      "Chambre principale et Chambre d’amis",
+      "Salle de bain ou Salle de douche",
       "WC",
       "Buanderie",
       "Cellier",
       "Dressing",
       "Terrasse",
       "Balcon",
+      "Bureau ou espace de travail",
       "Jardin",
       "Patio",
       "Véranda",
@@ -24,11 +22,7 @@ const allQuestions = [
       "Grenier",
       "Garage",
       "Couloir",
-      "Escalier",
-      "Salle de multimédia",
-      "Salle de musique",
-      "Salle de sport",
-      "Bibliothèque",
+      "Escalier interieur",
       "Atelier",
       "Piscine"
     ],
@@ -150,7 +144,7 @@ const allQuestions = [
     ],
   },
   {
-    question: "Quels slont les équipements que vous possédez sur votre terrasse, jardin ou patio ?",
+    question: "Quels sont les équipements que vous possédez sur votre terrasse, jardin ou patio ?",
     options : [
       "Fauteuil",
       "Canapé",

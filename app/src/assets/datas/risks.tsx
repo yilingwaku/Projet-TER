@@ -29,8 +29,16 @@ const risks: Risk[] = [
         isChecked: false,
         slug: "chutes-logement",
         risks: "- Chutes : bords relevés, tapis glissants ou mal fixés.\n- Déséquilibre : surface irrégulière ou épaisse.\n- Mobilité réduite : gêne pour les déambulateurs ou fauteuils.\n- Problèmes respiratoires : accumulation de poussière et acariens.",
-        where: "Non précisé",
+        where: "Chambre,Salle de Bain",
         prevents: "- Retirer le tapis\n- Appliquer une surface antidérapante sous le tapis"
+      },
+      {
+        title: "",
+        isChecked: false,
+        slug: "",
+        risks:"",
+        where:"",
+        prevents:""
       }
     ]
   },
@@ -42,12 +50,20 @@ const risks: Risk[] = [
     description: "La cuisine est un lieu à haut risque pour les personnes âgées : brûlures, coupures, intoxications.",
     items: [
       {
-        title: "Brûlures et accidents",
+        title: "Hotte",
         isChecked: false,
-        slug: "brulures-cuisine",
-        risks: "- Brûlures graves\n- Infection\n- Perte de réflexes\n- Troubles cognitifs.",
-        where: "Cuisine : huile chaude, plaques, four, feu allumé oublié.",
-        prevents: "- Ne jamais laisser de casseroles sans surveillance\n- Utiliser des maniques épaisses\n- Appareils à arrêt automatique\n- Aide d'un proche\n- Organisation de la cuisine à hauteur"
+        slug: "incendie-intoxication",
+        risks:"- Intoxication : Mauvaise installation ou hotte non entrenue\n - Incendie : La graisse peut s'infiltrer dans la hotte et prendre feu ",
+        where:"Cuisine",
+        prevents:"- Entrenir la hotte\n - Ouvrir les fenêtres régulièrement"
+      },
+      {
+        title: "",
+        isChecked: false,
+        slug: "",
+        risks:"",
+        where:"",
+        prevents:""
       },
       {
         title: "Coupures lors de la préparation",
