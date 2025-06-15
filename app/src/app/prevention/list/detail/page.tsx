@@ -57,7 +57,7 @@ export default function PreventionDetails() {
           <div className='content'>
             <div className='flex flex-row items-center gap-2 align-middle'>
               <Icon icon="Pin" size={20} />
-              <span className='sm-text'>Où</span>
+              <span className='sm-text'>Situation :</span>
             </div>
             <span className='md-text'>{formatText(item.where)}</span>
           </div>

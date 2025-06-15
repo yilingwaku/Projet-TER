@@ -6,6 +6,8 @@ import Bar from '@/components/Bar';
 import LinkModal from '@/components/modal/LinkModal';
 
 import { useUser } from '@/context/UserContext';
+import { adaptPrevention } from '@/utils/adapt';
+import risks from '@/assets/datas/risks';
 
 const Resultats = () => {
     const { questionnaire } = useUser();
@@ -32,7 +34,10 @@ const Resultats = () => {
                             </div>
                         ))
                     ) : (
-                        <span className="md-text">Aucune réponse fournie.</span>
+                        <>
+                            <span className="md-text">Aucune réponse fournie.</span>
+                            <div> {adaptPrevention([], risks)}</div>
+                        </>
                     )}
 
                 </div>

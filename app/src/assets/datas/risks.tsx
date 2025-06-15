@@ -58,20 +58,20 @@ const risks: Risk[] = [
         prevents:"- Entrenir la hotte\n - Ouvrir les fenêtres régulièrement"
       },
       {
-        title: "",
+        title: "Four, Grille-pain,Friteuse,Plaque à induction",
         isChecked: false,
-        slug: "",
-        risks:"",
-        where:"",
-        prevents:""
+        slug: "incendie",
+        risks:"- Incendie : Risque d'incendie sans une surveillance lors de l'utilisation",
+        where:"Cuisine",
+        prevents:"- Surveiller l'utilisation\n- Entretenir les appareils régulièrement\n- Mettre un chronomètre lors de l'utilisation de ses appareils"
       },
       {
-        title: "Coupures lors de la préparation",
+        title: "Coupures",
         isChecked: false,
         slug: "coupures-cuisine",
         risks: "- Coupures\n- Infections\n- Perte de dextérité ou vision.",
         where: "- Utilisation de couteaux\n- Boîtes de conserve\n- Objets en verre ou métal cassés",
-        prevents: "- Utiliser des couteaux ergonomiques\n- Éviter les outils complexes\n- Porter des gants\n- Demander de l'aide"
+        prevents: "- Utiliser des couteaux ergonomiques\n- Éviter les outils complexes\n- Demander de l'aide"
       },
       {
         title: "Intoxication alimentaire",
