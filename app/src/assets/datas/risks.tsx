@@ -39,7 +39,15 @@ const risks: Risk[] = [
         risks:"",
         where:"",
         prevents:""
-      }
+      },
+      {
+        title: "",
+        isChecked: false,
+        slug: "",
+        risks:"",
+        where:"",
+        prevents:""
+      },
     ]
   },
   {
@@ -74,12 +82,29 @@ const risks: Risk[] = [
         prevents:"- Si une odeur forte se fait sentir, il faut ouvrir les fenêtres"
       },
       {
+        title: "Lave-vaisselle ,Lave-linge, Sèche-linge",
+        isChecked: false,
+        slug: "chute-blessure",
+        risks:"- Chute : Possibilité de se taper le pied et de chuter par la suite\n- Blessure : Possibilité de se prendre taper le pied et d'avoir un ecchymose",
+        where:"Cuisine, SalleDeBain, SalleDeDouche, Buanderie",
+        prevents:""
+      },
+      
+      {
         title: "Placard",
         isChecked: false,
         slug: "chute",
         risks:"- Chute : Risque de chute si les placards sont trop haut\n- Blessure : Se prendre le coin de la porte du placard",
         where:"Cuisine,SalledeBain",
         prevents:"- Il faut mettre les placards à votre niveau, pas en hauteur\n- Mettre des rebords en caoutchouc pour éviter de se blesser"
+      },
+      {
+        title: "Appareils Electriques",
+        isChecked: false,
+        slug: "incendie",
+        risks:"- Incendie : ",
+        where:"Cuisine,",
+        prevents:"- Débrancher les appareils électroniques après leurs utilisations\n- Il faut éviter l'utilisation de plusieurs multiprises entre elles"
       },
       {
         title: "Coupures",

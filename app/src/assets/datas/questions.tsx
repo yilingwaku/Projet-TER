@@ -15,15 +15,23 @@ const allQuestions = [
       "Terrasse",
       "Balcon",
       "Bureau ou espace de travail",
+      "Cave",
+      "Grenier",
+      "Couloir",
+      "Escalier interieur",
+      "\n \n \n \n Avez-vous des élements externes à votre maison?"
+    ],
+  },
+  {
+    question: "Quelles sont les pièces de votre appartement ou maison en extérieur :",
+    options: [
+      "Terrasse",
+      "Balcon",
       "Jardin",
       "Patio",
       "Véranda",
-      "Cave",
-      "Grenier",
       "Garage",
-      "Couloir",
-      "Escalier interieur",
-      "Atelier",
+      "Escalier externe",
       "Piscine"
     ],
   },

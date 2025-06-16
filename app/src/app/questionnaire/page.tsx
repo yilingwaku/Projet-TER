@@ -15,18 +15,19 @@ import { useRisk } from '@/context/RiskContext';
 import { adaptPrevention } from '@/utils/adapt';
 
 const optionToQuestionMap = [
-  { option: "Entrée", index: 1 },
-  { option: "Salon", index: 2 },
-  { option: "Cuisine", index: 3 },
-  { option: "Salle à manger", index: 4 },
-  { option: "Chambre principale et Chambre d’amis", index: 5 },
-  { option: "Salle de bain ou Salle de douche", index: 6 },
-  { option: "WC", index: 7 },
-  { option: "Buanderie", index: 8 },
-  { option: ["Terrasse", "Jardin", "Patio"], index: 9 },
-  { option: "Couloir", index: 10 },
-  { option: "Escalier", index: 11 },
-  { option: "Piscine", index: 12 },
+  { option: "\n \n \n \n Avez-vous des élements externes à votre maison?", index: 1},
+  { option: "Entrée", index: 2 },
+  { option: "Salon", index: 3 },
+  { option: "Cuisine", index: 4 },
+  { option: "Salle à manger", index: 5 },
+  { option: "Chambre principale et Chambre d’amis", index: 6 },
+  { option: "Salle de bain ou Salle de douche", index: 7 },
+  { option: "WC", index: 8 },
+  { option: "Buanderie", index: 9 },
+  { option: ["Terrasse", "Jardin", "Patio"], index: 10 },
+  { option: "Couloir", index: 11 },
+  { option: "Escalier", index: 12 },
+  { option: "Piscine", index: 13 },
 ];
 
 const Questionnaire = () => {
@@ -63,7 +64,7 @@ const Questionnaire = () => {
     const handleNext = () => {
         saveCurrentAnswer();
 
-        // Logique spéciale après la première question
+        // Logique spéciale après les deux premières question
         if (currentIndex === 0) {
             if (currentIndex === 0) {
                 optionToQuestionMap.forEach(({ option, index }) => {
@@ -95,6 +96,7 @@ const Questionnaire = () => {
         };
         setUserAnswers(updatedAnswers);
     };
+
 
    useEffect(() => {
         if (showResults) {
