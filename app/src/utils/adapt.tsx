@@ -10,8 +10,12 @@ import { Risk } from '@/assets/datas/risks';
  */
 export const adaptPrevention = (answers: string[], defaultRisks: Risk[]): Risk[] => {
   if (!answers || answers.length === 0) return defaultRisks;
+  let riskUpdate: Risk[]= defaultRisks;
   for(let i=0;i<answers.length;i++){
     let answer=answers[i];
+    if(answer == "Cuisine"){
+      riskUpdate=riskUpdate.concat(defaultRisks)
+    }
   }
 
 
@@ -22,5 +26,5 @@ export const adaptPrevention = (answers: string[], defaultRisks: Risk[]): Risk[]
 
 
 
-  return "NOT YET IMPLEMENTED";
+  return riskUpdate;
 };

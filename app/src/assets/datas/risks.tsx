@@ -18,45 +18,20 @@ export type Risk = {
 
 const risks: Risk[] = [
   {
-    title: "Lieu de vie",
-    icon: "Heart",
-    slug: "lieu-de-vie",
-    resume: "Aménager les espaces pour la vie quotidienne.",
-    description: "Certains éléments de votre lieu de vie peuvent s'avérer risqués avec l'âge.",
-    items: [
-      {
-        title: "Le tapis",
-        isChecked: false,
-        slug: "chutes-logement",
-        risks: "- Chutes : bords relevés, tapis glissants ou mal fixés.\n- Déséquilibre : surface irrégulière ou épaisse.\n- Mobilité réduite : gêne pour les déambulateurs ou fauteuils.\n- Problèmes respiratoires : accumulation de poussière et acariens.",
-        where: "Chambre,Salle de Bain",
-        prevents: "- Retirer le tapis\n- Appliquer une surface antidérapante sous le tapis"
-      },
-      {
-        title: "",
-        isChecked: false,
-        slug: "",
-        risks:"",
-        where:"",
-        prevents:""
-      },
-      {
-        title: "",
-        isChecked: false,
-        slug: "",
-        risks:"",
-        where:"",
-        prevents:""
-      },
-    ]
-  },
-  {
     title: "Cuisine",
     icon: "Flame",
     slug: "cuisine",
     resume: "Attention aux accidents fréquents en cuisine.",
     description: "La cuisine est un lieu à haut risque pour les personnes âgées : brûlures, coupures, intoxications.",
     items: [
+      {
+        title: "",
+        isChecked: false,
+        slug: "",
+        risks:"",
+        where:"",
+        prevents:""
+      },
       {
         title: "Hotte",
         isChecked: false,
@@ -144,17 +119,26 @@ const risks: Risk[] = [
         isChecked: false,
         slug: "deshydratation",
         risks: "- Confusion\n- Fatigue\n- Chutes\n- Aggravation de maladies.",
-        where: "- À domicile\n- Période de chaleur\n- Maladie",
+        where: "Partout",
         prevents: "- Boire régulièrement\n- Consommer des aliments riches en eau\n- Surveiller les signes : bouche sèche, fatigue"
+      },
+      {
+        title: "Sport",
+        isChecked: false,
+        slug: "chute",
+        risks:"- Chute",
+        where:"Partout",
+        prevents:""
       },
       {
         title: "Dénutrition",
         isChecked: false,
         slug: "denutrition",
         risks: "- Affaiblissement immunitaire\n- Chutes\n- Ralentissement de guérison.",
-        where: "- À domicile, en cas de perte d'appétit\n- Solitude\n- Maladie chronique",
+        where: "- Partout",
         prevents: "- Maintenir une alimentation équilibrée\n- Surveiller le poids\n- Consulter un diététicien"
       }
+      
     ]
   },
   {
@@ -195,6 +179,14 @@ const risks: Risk[] = [
         risks: "- Intoxication : Risque de ne pas percevoir un incendie à temps",
         where: "- Salle fermée",
         prevents: "- Mettre des détecteurs dans les pièces principales, cuisine, salon ou chambre\n- L'appareil doit être alimenté régulièrement, remettre des piles régulièrement "
+      },
+      {
+        title: "Peinture antidérapante",
+        isChecked: false,
+        slug: "chute",
+        risks:"- Chute : ",
+        where:"",
+        prevents:""
       },
     ]
   },
@@ -237,7 +229,15 @@ const risks: Risk[] = [
         risks: "- Asphyxie rapide\n- Fausse route alimentaire.",
         where: "Pendant les repas",
         prevents: "- Adapter la texture des aliments\n- Manger lentement et assis\n- Consulter un professionnel en cas de troubles de la déglutition"
-      }
+      },
+      {
+        title: "Déshydratation",
+        isChecked: false,
+        slug: "deshydratation",
+        risks: "- Confusion\n- Fatigue\n- Chutes\n- Aggravation de maladies.",
+        where: "Partout",
+        prevents: "- Boire régulièrement\n- Consommer des aliments riches en eau\n- Surveiller les signes : bouche sèche, fatigue"
+      },
     ]
   }
 ];
