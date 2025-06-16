@@ -10,7 +10,9 @@ import { Risk } from '@/assets/datas/risks';
  */
 export const adaptPrevention = (answers: string[], defaultRisks: Risk[]): Risk[] => {
   if (!answers || answers.length === 0) return defaultRisks;
-
+  for(let i=0;i<answers.length;i++){
+    let answer=answers[i];
+  }
 
 
 

@@ -165,29 +165,37 @@ const risks: Risk[] = [
     description: "Les installations vétustes ou dangereuses augmentent les risques domestiques.",
     items: [
       {
-        title: "Électrocution ou incendie",
+        title: "Rampe d'accès, rambarde",
         isChecked: false,
-        slug: "electrocution-incendie",
-        risks: "- Électrocution\n- Incendie\n- Courts-circuits.",
-        where: "- Prises surchargées\n- Appareils anciens ou défectueux",
-        prevents: "- Faire vérifier l'installation électrique\n- Éviter les multiprises\n- Débrancher les appareils\n- Installer des détecteurs"
+        slug: "chute",
+        risks: "- Chute : Glissade involontaire lors de la monter des escaliers",
+        where: "Escalier",
+        prevents: "- Mettre les rambardes sur tout les escaliers"
       },
       {
-        title: "Intoxication au monoxyde de carbone",
+        title: "Tapis d'escalier, Sol antidérapant",
+        isChecked: false,
+        slug: "chute",
+        risks: "- Chute : Glissade involontaire lors de la monter des escaliers",
+        where: "Escalier",
+        prevents: "- Mettre une protection supplémentaire sur le sol de l'escalier"
+      },
+      {
+        title: "Douche + installation",
+        isChecked: false,
+        slug: "chute, noyade",
+        risks:"- Chute : Possibilité de chute ren sortant d'une baignoire et de douche\n- Noyade :  Pour la cas d'un bain, une chute dans le bain et une perte de connaissance peut permettre la noyade",
+        where:"SalleDeBain, SalleDeDouche",
+        prevents:"- Priviligier une douche à un bain\n- Des tapis antidérapants\n- Siège de douche"
+      },
+      {
+        title: "Détecteur de fumée",
         isChecked: false,
         slug: "intoxication-co",
-        risks: "- Gaz incolore\n- Inodore\n- Mortel : maux de tête, nausées, perte de connaissance, décès.",
-        where: "- Logements mal ventilés\n- Appareils à combustion\n- Garages fermés",
-        prevents: "- Faire réviser les chauffages\n- Aérer quotidiennement\n- Ne pas utiliser de groupe électrogène en intérieur\n- Installer un détecteur de CO"
+        risks: "- Intoxication : Risque de ne pas percevoir un incendie à temps",
+        where: "- Salle fermée",
+        prevents: "- Mettre des détecteurs dans les pièces principales, cuisine, salon ou chambre\n- L'appareil doit être alimenté régulièrement, remettre des piles régulièrement "
       },
-      {
-        title: "Incendie domestique",
-        isChecked: false,
-        slug: "incendie-domestique",
-        risks: "- Blessures graves ou mort\n- Difficulté à réagir rapidement.",
-        where: "- Cuisine (huile surchauffée, appareils)\n- Salon (bougies, cigarettes)\n- Chambres (chauffage)",
-        prevents: "- Ne jamais laisser de cuisson sans surveillance\n- Éteindre les appareils après usage\n- Installer des détecteurs de fumée et les tester"
-      }
     ]
   },
   {
@@ -201,9 +209,9 @@ const risks: Risk[] = [
         title: "Isolement social",
         isChecked: false,
         slug: "isolement",
-        risks: "- Dépression\n- Dénutrition\n- Déclin cognitif.",
-        where: "À domicile, en cas de solitude ou perte de proches",
-        prevents: "- Maintenir des contacts réguliers\n- Participer à des activités sociales\n- Utiliser la visioconférence ou le téléphone"
+        risks: "- Perte d'appétit\n- Repli sur soi\n Développement de certaine maladie psychique ou physique",
+        where: "La où le vent nous porte ",
+        prevents: "- Maintenir des contacts réguliers en utilisant la visioconférence ou le téléphone\n- Participer à des activités sociales\n- "
       }
     ]
   },

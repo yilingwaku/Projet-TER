@@ -64,7 +64,7 @@ const Questionnaire = () => {
     const handleNext = () => {
         saveCurrentAnswer();
 
-        // Logique spéciale après les deux premières question
+        // Logique spéciale après la première question
         if (currentIndex === 0) {
             if (currentIndex === 0) {
                 optionToQuestionMap.forEach(({ option, index }) => {

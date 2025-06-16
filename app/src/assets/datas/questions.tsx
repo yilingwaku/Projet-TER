@@ -32,7 +32,8 @@ const allQuestions = [
       "Véranda",
       "Garage",
       "Escalier externe",
-      "Piscine"
+      "Piscine",
+      "Ascenceur"
     ],
   },
   {
